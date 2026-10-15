@@ -260,7 +260,7 @@ canvas#matrix-canvas-glow {
 .contribution p { color: #d7e6d6; font-size: 11px; margin-top: 3px; }
 
 /* Showcase */
-.showcase { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 26px; margin-bottom: 40px; }
+.showcase { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 26px; margin-bottom: 40px; }
 .showcase-card { padding: 0; overflow: hidden; }
 .showcase-card .media {
   position: relative;
@@ -289,9 +289,11 @@ canvas#matrix-canvas-glow {
 
 /* Gallery navigation */
 .showcase-card .media img.gallery-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   cursor: zoom-in;
 }
@@ -307,6 +309,13 @@ canvas#matrix-canvas-glow {
   border-radius: 6px;
 }
 .showcase-card .media.showcase-video { cursor: zoom-in; }
+
+/* Showcase: world gallery */
+.showcase-card.showcase-world .media { width: 50%; margin: 0 auto; }
+
+/* Showcase: UI/design gallery */
+.showcase-card.showcase-design { display: grid; grid-template-columns: 1fr 1fr; }
+.showcase-card.showcase-design .info { grid-column: 1 / -1; }
 
 /* Showcase: music */
 .showcase-card.showcase-music { grid-column: 1 / -1; }
@@ -330,6 +339,8 @@ canvas#matrix-canvas-glow {
     height: auto;
   }
   .showcase-card.showcase-music .media iframe { min-height: 166px; }
+  .showcase-card.showcase-design { grid-template-columns: 1fr; }
+  .showcase-card.showcase-world .media { width: 100%; }
 }
 .gallery-arrow {
   position: absolute;
