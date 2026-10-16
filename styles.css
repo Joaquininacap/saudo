@@ -304,18 +304,22 @@ canvas#matrix-canvas-glow {
   display: block;
 }
 .showcase-card .media.showcase-video iframe {
-  width: calc(100% - 16px);
-  height: calc(100% - 16px);
+  width: 100%;
+  height: 100%;
   border-radius: 6px;
 }
-.showcase-card .media.showcase-video { cursor: zoom-in; }
+.showcase-card .media.showcase-video { aspect-ratio: 16 / 9; padding: 0; cursor: zoom-in; }
 
 /* Showcase: world gallery */
 .showcase-card.showcase-world .media { width: 50%; margin: 0 auto; }
 
+/* Showcase: animations video */
+.showcase-card.showcase-animations .media { width: 50%; margin: 0 auto; aspect-ratio: 16 / 9; padding: 0; }
+
 /* Showcase: UI/design gallery */
 .showcase-card.showcase-design { display: grid; grid-template-columns: 1fr 1fr; }
 .showcase-card.showcase-design .info { grid-column: 1 / -1; }
+.showcase-card.showcase-design .media { aspect-ratio: 16 / 9; padding: 0; }
 
 /* Showcase: music */
 .showcase-card.showcase-music { grid-column: 1 / -1; }
